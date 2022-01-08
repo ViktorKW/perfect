@@ -4,6 +4,10 @@
 
 class MapDrawer{
 public:
-  MapDrawer();
-  virtual void drawMap(const Map map);
+  MapDrawer(){
+
+  }
+  virtual void drawMap(const Map map){
+    
+  }
 };

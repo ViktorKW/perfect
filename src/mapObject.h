@@ -3,9 +3,14 @@
 
 
 class MapObject{
+protected:
+  char sprite;
 public:
-  const std::string objSprite;
   int coordX;
   int coordY;
+  char getSprite(){
+    return sprite;
+  }
+
   MapObject(int _coordX, int _coordY);
 };
