@@ -14,6 +14,6 @@ int main(int argc, char const *argv[]) {
     std::cout << '\n';
   }*/
 
-  MapGeneretor.generate_map(64, 16, 16)
+  MapGeneretor::generate_map();
   return 0;
 }

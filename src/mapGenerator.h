@@ -10,22 +10,22 @@
 
 class MapGeneretor{
 public:
-  static void /*Map*/ generate_map(unsigned map_size = 32, unsigned room_min_sizeX, unsigned room_min_sizeY){
+  static void /*Map*/ generate_map(unsigned map_size = 32){
     Map map(map_size);
-    std::vector<Room>rooms;
+    std::vector<Room>vec;
 
 
     srand (time(NULL));
 
 
     for (size_t i = 0; i < map_size/4; i++) {
-      rooms.push_back(Room(rand() % room_min_sizeX + 1, rand() % room_min_sizeY + 1));
+      vec.push_back(Room(rand() % (map_size/8) + 4, rand() % (map_size/8) + 4));
     }
 
-    for (size_t k = 0; k < rooms.size(); k++) {
-      for (size_t i = 0; i < rooms.room_vector.size(); i++) {
-        for (size_t j = 0; j < rooms.room_vector[i].size(); j++) {
-          std::cout <<rooms.room_vector[i][j].getSprite();
+    for (Room item : vec) {
+      for (size_t i = 0; i < item.room_vector.size(); i++) {
+        for (size_t j = 0; j < item.room_vector[i].size(); j++) {
+          std::cout <<item.room_vector[i][j].getSprite();
         }
         std::cout << '\n';
       }
@@ -33,6 +33,8 @@ public:
       std::cout << '\n';
       std::cout << '\n';
     }
+
+
     /*return map;*/
   }
 };
