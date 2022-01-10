@@ -4,23 +4,18 @@
 
 class MyBase{
 public:
-  virtual void my_print()=0;
   MyBase(){
     std::cout << "Create MyBase" << '\n';
   }
-  virtual ~MyBase() = 0;
+  virtual ~MyBase()=0;
 };
+
 MyBase::~MyBase(){
   std::cout << "Destroyed MyBase" << '\n';
 }
 
-
 class EmptySpace:public MyBase{
 public:
-  void my_print(){
-    std::cout << "EmptySpacePrint" << '\n';
-  }
-
   EmptySpace(){
     std::cout << "Create EmptySpace" << '\n';
   }
@@ -30,12 +25,28 @@ public:
   }
 };
 
+class Wall:public MyBase{
+public:
+  Wall(){
+    std::cout << "Create Wall" << '\n';
+  }
+  ~Wall(){
+    std::cout << "Destroyed Wall" << '\n';
+  }
+};
+
+class Lava:public MyBase{
+public:
+  Lava(){
+    std::cout << "Create Lava" << '\n';
+  }
+  ~Lava(){
+    std::cout << "Destroyed Lava" << '\n';
+  }
+};
 
 int main(int argc, char const *argv[]) {
-  std::unique_ptr<MyBase> obj = std::make_unique<EmptySpace>();
-  std::unique_ptr<MyBase> obj2 = obj;
-  obj2->my_print();
-  /*std::unique_ptr<MyBase> m = std::make_unique<Lava>();
+  std::unique_ptr<MyBase> m = std::make_unique<Lava>();
   if(dynamic_cast<Lava*>(m.get())){
     std::cout << "it's Lava" << '\n';
   }
@@ -44,5 +55,5 @@ int main(int argc, char const *argv[]) {
   }
   else if(dynamic_cast<Wall*>(m.get())){
     std::cout << "it's Wall" << '\n';
-  }*/
+  }
 }

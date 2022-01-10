@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
-#include "tileObject.h"
-#include "wallTO.h"
+#include "tiles/tileObject.h"
+#include "tiles/wallTO.h"
 
 
 class Room{
