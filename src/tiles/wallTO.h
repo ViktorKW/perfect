@@ -5,10 +5,17 @@
 
 class WallTO : public TileObject{
 public:
-  char get_sprite(){
-    return '#';
+  WallTO(){
+    #if DEBUG_MODE
+    std::cout << "Created WallTO" << '\n';
+    #endif
   }
   ~WallTO(){
+    #if DEBUG_MODE
     std::cout << "Destroyed WallTO" << '\n';
+    #endif
+  }
+  char get_sprite(){
+    return '#';
   }
 };

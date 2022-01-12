@@ -1,10 +1,9 @@
 #include <iostream>
-#include "room.h"
-#include "map.h"
-#include "mapGenerator.h"
+#include "grid.h"
 
 
 int main(int argc, char const *argv[]) {
-  /*MapGeneretor::generate_map();*/
+  Grid g(15,15);
+  std::cout<<"Reastored files";
   return 0;
 }
